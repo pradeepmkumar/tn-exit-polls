@@ -8,14 +8,16 @@ export const contentType = "image/png";
 
 export default function OGImage() {
   const avg = getAverageSeats();
-  const indiaSeat = ["DMK", "INC", "VCK"].reduce((s, p) => s + (avg[p] ?? 0), 0);
+  const indiaSeat  = ["DMK", "INC", "VCK"].reduce((s, p) => s + (avg[p] ?? 0), 0);
   const aiadmkSeat = ["AIADMK", "BJP", "PMK"].reduce((s, p) => s + (avg[p] ?? 0), 0);
-  const otherSeat = avg["OTH"] ?? 0;
+  const tvkSeat    = avg["TVK"] ?? 0;
+  const otherSeat  = (avg["NTK"] ?? 0) + (avg["OTH"] ?? 0);
   const total = ELECTION.totalSeats;
 
-  const indiaW = Math.round((indiaSeat / total) * 100);
+  const indiaW  = Math.round((indiaSeat  / total) * 100);
   const aiadmkW = Math.round((aiadmkSeat / total) * 100);
-  const othersW = 100 - indiaW - aiadmkW;
+  const tvkW    = Math.round((tvkSeat    / total) * 100);
+  const othersW = 100 - indiaW - aiadmkW - tvkW;
 
   const pollCount = POLL_RESULTS.length;
   const latestDate = POLL_RESULTS.sort(
@@ -117,6 +119,24 @@ export default function OGImage() {
           <div
             style={{
               flex: 1,
+              background: "rgba(255,215,0,0.15)",
+              borderRadius: 16,
+              padding: "20px 24px",
+              display: "flex",
+              flexDirection: "column",
+              border: "1px solid rgba(255,215,0,0.4)",
+            }}
+          >
+            <div style={{ fontSize: 16, color: "#fde68a", fontWeight: 600, marginBottom: 4 }}>
+              TVK (Vijay)
+            </div>
+            <div style={{ fontSize: 56, color: "#ffffff", fontWeight: 800 }}>{tvkSeat}</div>
+            <div style={{ fontSize: 13, color: "#fef08a" }}>Avg · Axis: 109 🔥</div>
+          </div>
+
+          <div
+            style={{
+              flex: 1,
               background: "rgba(0,0,0,0.25)",
               borderRadius: 16,
               padding: "20px 24px",
@@ -137,6 +157,7 @@ export default function OGImage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           <div style={{ display: "flex", height: 20, borderRadius: 10, overflow: "hidden" }}>
             <div style={{ width: `${indiaW}%`, background: "#ef4444" }} />
+            <div style={{ width: `${tvkW}%`, background: "#fbbf24" }} />
             <div style={{ width: `${othersW}%`, background: "#9ca3af" }} />
             <div style={{ width: `${aiadmkW}%`, background: "#16a34a" }} />
           </div>
@@ -148,9 +169,9 @@ export default function OGImage() {
               color: "#fecaca",
             }}
           >
-            <span>← INDIA Alliance ({indiaW}%)</span>
+            <span>← DMK+ ({indiaW}%)</span>
             <span>Based on {pollCount} exit polls · {latestDate}</span>
-            <span>AIADMK Alliance ({aiadmkW}%) →</span>
+            <span>AIADMK+ ({aiadmkW}%) →</span>
           </div>
         </div>
 

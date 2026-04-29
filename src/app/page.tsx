@@ -53,36 +53,36 @@ export default function Home() {
             <div className="flex gap-3">
               <div className="w-1 rounded-full bg-red-500 flex-shrink-0" />
               <div>
-                <div className="font-semibold text-gray-800">INDIA Alliance leads in all polls</div>
+                <div className="font-semibold text-gray-800">DMK+ leads in 5 of 6 polls</div>
                 <div className="text-xs text-gray-500 mt-0.5">
-                  DMK-led alliance consistently projected above majority mark across all five agencies.
+                  DMK-led alliance projected at 127–152 seats across five agencies — above the 118 majority mark.
                 </div>
               </div>
             </div>
             <div className="flex gap-3">
-              <div className="w-1 rounded-full bg-green-500 flex-shrink-0" />
+              <div className="w-1 rounded-full bg-yellow-400 flex-shrink-0" />
               <div>
-                <div className="font-semibold text-gray-800">AIADMK Alliance at 75–88 seats</div>
+                <div className="font-semibold text-gray-800">TVK (Vijay) — blockbuster debut</div>
                 <div className="text-xs text-gray-500 mt-0.5">
-                  Opposition is projected to fall well short of the 118-seat majority mark.
+                  Axis My India predicts TVK wins 109 seats, making Vijay the kingmaker or even CM. All others put TVK at 13–21.
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <div className="w-1 rounded-full bg-green-600 flex-shrink-0" />
+              <div>
+                <div className="font-semibold text-gray-800">AIADMK at historic low</div>
+                <div className="text-xs text-gray-500 mt-0.5">
+                  AIADMK+ projected 57–93 seats — a dramatic fall from 75 seats in 2021, squeezed by TVK.
                 </div>
               </div>
             </div>
             <div className="flex gap-3">
               <div className="w-1 rounded-full bg-orange-500 flex-shrink-0" />
               <div>
-                <div className="font-semibold text-gray-800">BJP gaining vote share</div>
+                <div className="font-semibold text-gray-800">Record 85.10% voter turnout</div>
                 <div className="text-xs text-gray-500 mt-0.5">
-                  BJP projected at 7–9% vote share — its strongest TN performance yet.
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <div className="w-1 rounded-full bg-purple-500 flex-shrink-0" />
-              <div>
-                <div className="font-semibold text-gray-800">Range varies by agency</div>
-                <div className="text-xs text-gray-500 mt-0.5">
-                  DMK seat projections range from 115 to 128 — a 13-seat spread across polls.
+                  Highest turnout since Independence on April 23 — widely seen as anti-incumbency signal favouring change.
                 </div>
               </div>
             </div>

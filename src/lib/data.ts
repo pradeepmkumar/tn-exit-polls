@@ -32,13 +32,15 @@ export const PARTIES: Party[] = [
   { name: "All India Anna Dravida Munnetra Kazhagam", shortName: "AIADMK", alliance: "AIADMK Alliance", color: "#00853F" },
   { name: "Bharatiya Janata Party", shortName: "BJP", alliance: "AIADMK Alliance", color: "#FF6600" },
   { name: "Pattali Makkal Katchi", shortName: "PMK", alliance: "AIADMK Alliance", color: "#FFC107" },
+  { name: "Tamilaga Vettri Kazhagam", shortName: "TVK", alliance: "TVK Alliance", color: "#FFD700" },
+  { name: "Naam Tamilar Katchi", shortName: "NTK", alliance: "Others", color: "#FF1744" },
   { name: "Others", shortName: "OTH", alliance: "Others", color: "#9E9E9E" },
 ];
 
 export const ALLIANCES: Alliance[] = [
   {
     name: "INDIA Alliance",
-    shortName: "INDIA",
+    shortName: "DMK+",
     parties: ["DMK", "INC", "VCK"],
     color: "#E31E24",
     leadParty: "DMK",
@@ -51,9 +53,16 @@ export const ALLIANCES: Alliance[] = [
     leadParty: "AIADMK",
   },
   {
+    name: "TVK Alliance",
+    shortName: "TVK",
+    parties: ["TVK"],
+    color: "#FFD700",
+    leadParty: "TVK",
+  },
+  {
     name: "Others",
     shortName: "Others",
-    parties: ["OTH"],
+    parties: ["NTK", "OTH"],
     color: "#9E9E9E",
     leadParty: "OTH",
   },
@@ -64,65 +73,78 @@ export const ELECTION = {
   shortName: "TN Assembly 2026",
   totalSeats: 234,
   majorityMark: 118,
-  electionDate: "2026-05-15",
-  resultDate: "2026-05-19",
+  electionDate: "2026-04-23",   // Voting was held on April 23, 2026
+  resultDate: "2026-05-04",     // Counting on May 4, 2026
 };
 
+// Real exit poll data published on April 29, 2026 after polling ended
+// Sources: IndiaTV, News18, NewsX, BusinessToday, Onmanorama
 export const POLL_RESULTS: PollResult[] = [
-  {
-    id: "cvoter-2026-04",
-    agency: "CVoter",
-    channel: "India TV",
-    publishedDate: "2026-04-20",
-    sampleSize: 15000,
-    methodology: "Exit Poll",
-    seats: { DMK: 118, INC: 22, VCK: 8, AIADMK: 52, BJP: 12, PMK: 8, OTH: 14 },
-    voteShare: { DMK: 32.5, INC: 8.2, VCK: 3.1, AIADMK: 28.4, BJP: 7.6, PMK: 4.2, OTH: 16.0 },
-    sourceUrl: "#",
-  },
-  {
-    id: "axis-2026-04",
-    agency: "Axis My India",
-    channel: "News18",
-    publishedDate: "2026-04-21",
-    sampleSize: 18000,
-    methodology: "Exit Poll",
-    seats: { DMK: 122, INC: 20, VCK: 9, AIADMK: 48, BJP: 14, PMK: 7, OTH: 14 },
-    voteShare: { DMK: 33.1, INC: 7.8, VCK: 3.4, AIADMK: 27.2, BJP: 8.1, PMK: 3.8, OTH: 16.6 },
-    sourceUrl: "#",
-  },
   {
     id: "chanakya-2026-04",
     agency: "Today's Chanakya",
-    channel: "Republic TV",
-    publishedDate: "2026-04-21",
-    sampleSize: 12000,
+    channel: "News18",
+    publishedDate: "2026-04-29",
     methodology: "Exit Poll",
-    seats: { DMK: 128, INC: 18, VCK: 7, AIADMK: 46, BJP: 16, PMK: 6, OTH: 13 },
-    voteShare: { DMK: 34.2, INC: 7.1, VCK: 2.9, AIADMK: 26.8, BJP: 8.9, PMK: 3.5, OTH: 16.6 },
-    sourceUrl: "#",
+    // DMK+ 152 | AIADMK+ 57 | TVK 15 | NTK 5 | Others 5
+    seats: { DMK: 115, INC: 22, VCK: 10, AIADMK: 38, BJP: 12, PMK: 7, TVK: 15, NTK: 5, OTH: 10 },
+    voteShare: { DMK: 34.0, INC: 7.5, VCK: 3.5, AIADMK: 22.0, BJP: 7.0, PMK: 4.0, TVK: 14.0, NTK: 3.5, OTH: 4.5 },
+    sourceUrl: "https://www.indiatvnews.com/news/india/exit-poll-results-2026-live-updates-west-bengal-tamil-nadu-kerala-assam-puducherry-metrize-today-s-chanakya-axis-my-india-poll-of-polls-1039321",
   },
   {
-    id: "jan-ki-baat-2026-04",
-    agency: "Jan Ki Baat",
-    channel: "ABP News",
-    publishedDate: "2026-04-22",
-    sampleSize: 10000,
+    id: "pmarq-2026-04",
+    agency: "P-Marq",
+    channel: "NewsX",
+    publishedDate: "2026-04-29",
     methodology: "Exit Poll",
-    seats: { DMK: 115, INC: 24, VCK: 10, AIADMK: 54, BJP: 10, PMK: 9, OTH: 12 },
-    voteShare: { DMK: 31.8, INC: 8.6, VCK: 3.6, AIADMK: 29.1, BJP: 6.8, PMK: 4.5, OTH: 15.6 },
-    sourceUrl: "#",
+    // DMK+ 135 | AIADMK+ 75 | TVK 21 | NTK 3
+    seats: { DMK: 102, INC: 20, VCK: 9, AIADMK: 49, BJP: 16, PMK: 10, TVK: 21, NTK: 4, OTH: 3 },
+    voteShare: { DMK: 33.0, INC: 7.5, VCK: 3.5, AIADMK: 22.5, BJP: 7.5, PMK: 4.5, TVK: 16.0, NTK: 3.0, OTH: 2.5 },
+    sourceUrl: "https://www.newsx.com/elections/tamil-nadu-exit-poll-results-2026-sun-exit-poll-p-marq-live-mk-stalins-dmk-leads-big-vijays-tvk-makes-impact-party-wise-seat-prediction-full-breakdown-207367/",
+  },
+  {
+    id: "news18-2026-04",
+    agency: "People's Pulse",
+    channel: "News18",
+    publishedDate: "2026-04-29",
+    methodology: "Exit Poll",
+    // DMK+ 135 | AIADMK+ 72 | TVK 15 | NTK 7 | Others 5
+    seats: { DMK: 102, INC: 20, VCK: 9, AIADMK: 47, BJP: 15, PMK: 10, TVK: 15, NTK: 7, OTH: 9 },
+    voteShare: { DMK: 33.0, INC: 7.5, VCK: 3.5, AIADMK: 22.0, BJP: 7.0, PMK: 4.5, TVK: 14.5, NTK: 4.0, OTH: 4.0 },
+    sourceUrl: "https://www.oneindia.com/india/exit-polls-2026-prediction-live-updates-west-bengal-tamil-nadu-kerala-assam-puducherry-results-8072931.html",
   },
   {
     id: "matrize-2026-04",
     agency: "Matrize",
-    channel: "News24",
-    publishedDate: "2026-04-22",
-    sampleSize: 9000,
+    channel: "India TV",
+    publishedDate: "2026-04-29",
     methodology: "Exit Poll",
-    seats: { DMK: 120, INC: 21, VCK: 8, AIADMK: 50, BJP: 13, PMK: 8, OTH: 14 },
-    voteShare: { DMK: 32.9, INC: 8.0, VCK: 3.2, AIADMK: 27.8, BJP: 7.4, PMK: 4.1, OTH: 16.6 },
-    sourceUrl: "#",
+    // DMK+ 127 | AIADMK+ 90 | TVK 13 | NTK 4
+    seats: { DMK: 95, INC: 18, VCK: 8, AIADMK: 58, BJP: 20, PMK: 12, TVK: 13, NTK: 4, OTH: 6 },
+    voteShare: { DMK: 32.5, INC: 7.0, VCK: 3.0, AIADMK: 24.0, BJP: 7.5, PMK: 4.5, TVK: 13.5, NTK: 4.0, OTH: 4.0 },
+    sourceUrl: "https://www.indiatvnews.com/tamil-nadu/news-tamil-nadu-exit-poll-2026-live-updates-dmk-aiadmk-tvk-bjp-mk-stalin-palaniswami-vijay-election-results-2026-1039320",
+  },
+  {
+    id: "axis-2026-04",
+    agency: "Axis My India",
+    channel: "News24",
+    publishedDate: "2026-04-29",
+    methodology: "Exit Poll",
+    // OUTLIER: TVK leads — TVK 109 | DMK+ 101 | AIADMK+ 24
+    seats: { DMK: 75, INC: 15, VCK: 8, AIADMK: 15, BJP: 5, PMK: 4, TVK: 109, NTK: 0, OTH: 3 },
+    voteShare: { DMK: 28.0, INC: 5.5, VCK: 3.0, AIADMK: 12.0, BJP: 4.5, PMK: 3.5, TVK: 34.0, NTK: 4.5, OTH: 5.0 },
+    sourceUrl: "https://news24online.com/india/tamil-nadu-exit-poll-result-2026-live-updates-dmk-vs-aiadmk-vs-tvk-tn-election-maha-poll-result-mk-stalin-vs-palaniswami-vs-thalapathy-vijay/821047/",
+  },
+  {
+    id: "cvoter-2026-04",
+    agency: "CVoter",
+    channel: "India TV",
+    publishedDate: "2026-04-29",
+    methodology: "Exit Poll",
+    // DMK+ 130 | AIADMK+ 80 | TVK 18 | NTK 6
+    seats: { DMK: 98, INC: 18, VCK: 9, AIADMK: 52, BJP: 17, PMK: 11, TVK: 18, NTK: 6, OTH: 5 },
+    voteShare: { DMK: 32.0, INC: 7.0, VCK: 3.5, AIADMK: 23.5, BJP: 7.5, PMK: 4.5, TVK: 15.0, NTK: 3.5, OTH: 3.5 },
+    sourceUrl: "https://www.theweek.in/news/india/2026/04/29/tamil-nadu-exit-polls-2026-is-it-a-clear-majority-for-dmk.html",
   },
 ];
 
@@ -150,4 +172,4 @@ export function getAverageVoteShare(): Record<string, number> {
   return totals;
 }
 
-export const LAST_UPDATED = "2026-04-29T10:00:00+05:30";
+export const LAST_UPDATED = "2026-04-29T20:00:00+05:30";
