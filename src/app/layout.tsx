@@ -13,7 +13,7 @@ const ADSENSE_CLIENT = "ca-pub-1375355661820080";
 // Replace with your GA4 Measurement ID (e.g. G-XXXXXXXXXX) from Google Analytics
 const GA_ID = "G-XXXXXXXXXX";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tnexitpoll.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tn-poll.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -164,7 +164,7 @@ export default function OGImage() {
             color: "#fca5a5",
           }}
         >
-          tnexitpoll.vercel.app
+          tn-poll.in
         </div>
       </div>
     ),
