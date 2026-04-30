@@ -146,6 +146,28 @@ export const POLL_RESULTS: PollResult[] = [
     voteShare: { DMK: 32.0, INC: 7.0, VCK: 3.5, AIADMK: 23.5, BJP: 7.5, PMK: 4.5, TVK: 15.0, NTK: 3.5, OTH: 3.5 },
     sourceUrl: "https://www.theweek.in/news/india/2026/04/29/tamil-nadu-exit-polls-2026-is-it-a-clear-majority-for-dmk.html",
   },
+  {
+    id: "jvc-2026-04",
+    agency: "JVC",
+    channel: "Independent",
+    publishedDate: "2026-04-29",
+    methodology: "Exit Poll",
+    // OUTLIER: AIADMK+ leads — AIADMK+ 138 | DMK+ 86 | TVK 12
+    seats: { DMK: 64, INC: 13, VCK: 8, AIADMK: 90, BJP: 28, PMK: 20, TVK: 12, NTK: 3, OTH: 1 },
+    voteShare: { DMK: 29.0, INC: 5.5, VCK: 3.0, AIADMK: 27.5, BJP: 9.5, PMK: 5.5, TVK: 12.0, NTK: 2.5, OTH: 5.5 },
+    sourceUrl: "https://www.thenewsminute.com/tamil-nadu/all-exit-polls-show-dmk-lead-axis-my-india-says-tvk-to-win-minimum-98-seats",
+  },
+  {
+    id: "plab-2026-04",
+    agency: "Political Laboratory",
+    channel: "Independent",
+    publishedDate: "2026-04-29",
+    methodology: "Exit Poll",
+    // DMK+ 138 | AIADMK+ 84 | TVK 12
+    seats: { DMK: 104, INC: 21, VCK: 10, AIADMK: 55, BJP: 17, PMK: 12, TVK: 12, NTK: 4, OTH: 4 },
+    voteShare: { DMK: 34.5, INC: 7.5, VCK: 3.5, AIADMK: 22.5, BJP: 6.5, PMK: 4.0, TVK: 13.0, NTK: 3.0, OTH: 5.5 },
+    sourceUrl: "https://news24online.com/india/tamil-nadu-exit-poll-result-2026-live-updates-dmk-vs-aiadmk-vs-tvk-tn-election-maha-poll-result-mk-stalin-vs-palaniswami-vs-thalapathy-vijay/821047/",
+  },
 ];
 
 export function getAllianceSeats(poll: PollResult, allianceName: string): number {
@@ -172,4 +194,4 @@ export function getAverageVoteShare(): Record<string, number> {
   return totals;
 }
 
-export const LAST_UPDATED = "2026-04-29T20:00:00+05:30";
+export const LAST_UPDATED = "2026-04-30T15:30:00+05:30";
