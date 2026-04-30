@@ -15,32 +15,33 @@ export default function AdBanner({
   format = "horizontal",
   className = "",
 }: AdBannerProps) {
-  const [adLoaded, setAdLoaded] = useState(false);
+  const [showAd, setShowAd] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
-      setAdLoaded(true);
     } catch (err) {
-      console.log("AdSense not loaded yet");
+      console.log("AdSense error:", err);
     }
 
-    // Hide ad container if no ad appears after 2 seconds
+    // Check if ad loaded and has content
     const timer = setTimeout(() => {
       const adContainer = document.querySelector(`[data-ad-slot="${slot}"]`);
-      if (adContainer && !adContainer.innerHTML.trim()) {
-        const wrapper = adContainer.closest("div");
-        if (wrapper) wrapper.style.display = "none";
+      if (adContainer && adContainer.innerHTML && adContainer.innerHTML.includes("iframe")) {
+        setShowAd(true);
       }
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [slot]);
 
-  if (!adLoaded) return null;
+  // Don't render anything if ad didn't load
+  if (!showAd) return null;
 
   return (
-    <div className={`w-full ${className}`}>
+    <div className={`w-full py-2 ${className}`}>
       <ins
         className="adsbygoogle block"
         style={{ display: "block" }}
