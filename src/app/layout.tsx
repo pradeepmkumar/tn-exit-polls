@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     title: "TN Exit Poll 2026 Live Tracker",
     description: "All exit poll results for Tamil Nadu Assembly Election 2026 in one place.",
   },
+  other: {
+    "google-adsense-account": ADSENSE_CLIENT,
+  },
 };
 
 export default function RootLayout({
