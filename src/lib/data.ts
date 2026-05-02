@@ -173,4 +173,4 @@ export function getAverageVoteShare(): Record<string, number> {
   return totals;
 }
 
-export const LAST_UPDATED = "2026-04-30T18:45:00+05:30";
+export const LAST_UPDATED = "2026-05-02T12:47:37.208Z";
