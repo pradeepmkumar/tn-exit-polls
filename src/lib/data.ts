@@ -25,6 +25,17 @@ export interface PollResult {
   sourceUrl?: string;
 }
 
+export interface ActualResult {
+  id: string;
+  source: string; // "ECI" | "India Today" | "India TV" | etc.
+  lastUpdated: string;
+  seats: Record<string, number>; // Individual party seats (e.g., DMK, INC, VCK, AIADMK, BJP, PMK, TVK, NTK, OTH)
+  voteShare: Record<string, number>; // Individual party vote share
+  leadingConstituencies?: Record<string, string>; // Party leading in each constituency
+  statusMessage?: string; // "Counting in progress", "Complete", etc.
+  sourceUrl?: string;
+}
+
 export const PARTIES: Party[] = [
   { name: "Dravida Munnetra Kazhagam", shortName: "DMK", alliance: "INDIA Alliance", color: "#E31E24" },
   { name: "Indian National Congress", shortName: "INC", alliance: "INDIA Alliance", color: "#0078BE" },
