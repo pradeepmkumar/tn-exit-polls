@@ -19,12 +19,12 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-4 py-6 space-y-6">
         {/* Info banner */}
-        <div className="flex items-start gap-2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 text-xs text-blue-800">
+        <div className="flex items-start gap-2 bg-green-50 border border-green-200 rounded-lg px-4 py-3 text-xs text-green-800">
           <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
           <span>
-            Exit polls are projections based on voter surveys conducted on polling day. Actual results
-            may vary. Data is sourced from major national polling agencies and updated as new polls are
-            published.
+            <strong>Official Results Released:</strong> The Election Commission of India has announced the final results
+            from the May 4, 2026 counting. TVK emerges as the single largest party with 108 seats, while DMK+ secured 51 seats.
+            Exit polls and official results shown below.
           </span>
         </div>
 
@@ -48,41 +48,41 @@ export default function Home() {
 
         {/* Key insights */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6">
-          <h2 className="text-base font-bold text-gray-800 mb-4">Key Takeaways</h2>
+          <h2 className="text-base font-bold text-gray-800 mb-4">2026 Election Results — Historic Verdict</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
             <div className="flex gap-3">
-              <div className="w-1 rounded-full bg-red-500 flex-shrink-0" />
+              <div className="w-1 rounded-full bg-yellow-400 flex-shrink-0" />
               <div>
-                <div className="font-semibold text-gray-800">DMK+ leads in 5 of 6 polls</div>
+                <div className="font-semibold text-gray-800">TVK wins with 108 seats</div>
                 <div className="text-xs text-gray-500 mt-0.5">
-                  DMK-led alliance projected at 127–152 seats across five agencies — above the 118 majority mark.
+                  Actor Vijay's debut party emerges as the single largest party but falls short of the 118 majority mark. A historic political realignment.
                 </div>
               </div>
             </div>
             <div className="flex gap-3">
-              <div className="w-1 rounded-full bg-yellow-400 flex-shrink-0" />
+              <div className="w-1 rounded-full bg-red-500 flex-shrink-0" />
               <div>
-                <div className="font-semibold text-gray-800">TVK (Vijay) — blockbuster debut</div>
+                <div className="font-semibold text-gray-800">DMK+ collapses to 51 seats</div>
                 <div className="text-xs text-gray-500 mt-0.5">
-                  Axis My India predicts TVK wins 109 seats, making Vijay the kingmaker or even CM. All others put TVK at 13–21.
+                  The ruling alliance faces a historic defeat, dropping from 159 seats in 2021 to just 51 — anti-incumbency against MK Stalin.
                 </div>
               </div>
             </div>
             <div className="flex gap-3">
               <div className="w-1 rounded-full bg-green-600 flex-shrink-0" />
               <div>
-                <div className="font-semibold text-gray-800">AIADMK at historic low</div>
+                <div className="font-semibold text-gray-800">AIADMK+ recovers to 75 seats</div>
                 <div className="text-xs text-gray-500 mt-0.5">
-                  AIADMK+ projected 57–93 seats — a dramatic fall from 75 seats in 2021, squeezed by TVK.
+                  The traditional opposition alliance makes a comeback but still below 2021 levels, as the Dravidian duopoly breaks.
                 </div>
               </div>
             </div>
             <div className="flex gap-3">
               <div className="w-1 rounded-full bg-orange-500 flex-shrink-0" />
               <div>
-                <div className="font-semibold text-gray-800">Record 85.10% voter turnout</div>
+                <div className="font-semibold text-gray-800">No clear majority — horse-trading ahead</div>
                 <div className="text-xs text-gray-500 mt-0.5">
-                  Highest turnout since Independence on April 23 — widely seen as anti-incumbency signal favouring change.
+                  With no party/alliance at 118 seats, coalition negotiations and support arrangements will determine who forms the next government.
                 </div>
               </div>
             </div>
