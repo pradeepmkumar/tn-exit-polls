@@ -11,9 +11,9 @@ export default function PollTable() {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
       <div className="px-4 sm:px-6 py-4 border-b border-gray-100">
-        <h2 className="text-base font-bold text-gray-800">Exit Poll Comparison — Seats</h2>
+        <h2 className="text-base font-bold text-gray-800">Exit Polls vs Official Results — Seats</h2>
         <p className="text-xs text-gray-500 mt-0.5">
-          Projected seats out of 234 · Published 29 Apr 2026 after polling ended
+          Projected seats from exit polls (29 Apr) and official results from Election Commission of India (4 May) · Out of 234 seats
         </p>
       </div>
 
