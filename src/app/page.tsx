@@ -1,91 +1,74 @@
-import AdBanner from "@/components/AdBanner";
+import Link from "next/link";
+import { BarChart3, TrendingUp } from "lucide-react";
 import Header from "@/components/Header";
-import MajorityMeter from "@/components/MajorityMeter";
-import PollTable from "@/components/PollTable";
-import SeatChart from "@/components/SeatChart";
-import VoteShareChart from "@/components/VoteShareChart";
 import Footer from "@/components/Footer";
-import { Info } from "lucide-react";
 
-export default function Home() {
+export default function Landing() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
 
-      {/* Top ad */}
-      <div className="max-w-6xl mx-auto px-4 pt-4">
-        <AdBanner slot="1111111111" format="horizontal" />
-      </div>
-
-      <main className="max-w-6xl mx-auto px-4 py-6 space-y-6">
-        {/* Info banner */}
-        <div className="flex items-start gap-2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3 text-xs text-blue-800">
-          <Info className="w-4 h-4 mt-0.5 flex-shrink-0" />
-          <span>
-            Exit polls are projections based on voter surveys conducted on polling day. Actual results
-            may vary. Data is sourced from major national polling agencies and updated as new polls are
-            published.
-          </span>
+      <main className="flex-1 max-w-6xl mx-auto px-4 py-12 sm:py-20">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            Tamil Nadu Election 2026
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Explore exit poll predictions and official results from the Tamil Nadu Assembly Election held on April 23, 2026.
+          </p>
         </div>
 
-        {/* Majority meter / alliance summary */}
-        <MajorityMeter />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Exit Polls Card */}
+          <Link
+            href="/exit-polls"
+            className="group rounded-2xl border-2 border-gray-200 bg-white p-8 sm:p-10 hover:border-blue-400 hover:shadow-lg transition-all duration-300"
+          >
+            <div className="flex items-start justify-between mb-4">
+              <div className="p-3 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
+                <BarChart3 className="w-6 h-6 text-blue-600" />
+              </div>
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Exit Polls</h2>
+            <p className="text-gray-600 mb-6">
+              View predictions from major polling agencies based on surveys conducted on polling day. Compare seat projections and vote share across alliances.
+            </p>
+            <div className="text-sm font-semibold text-blue-600 group-hover:text-blue-700 flex items-center gap-2">
+              Explore Exit Polls
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </Link>
 
-        {/* Mid-page ad */}
-        <AdBanner slot="2222222222" format="horizontal" />
-
-        {/* Comparison table */}
-        <PollTable />
-
-        {/* Charts row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <SeatChart />
-          <VoteShareChart />
+          {/* Actual Results Card */}
+          <Link
+            href="/actual-results"
+            className="group rounded-2xl border-2 border-gray-200 bg-white p-8 sm:p-10 hover:border-green-400 hover:shadow-lg transition-all duration-300 opacity-75 hover:opacity-100"
+          >
+            <div className="flex items-start justify-between mb-4">
+              <div className="p-3 bg-green-100 rounded-lg group-hover:bg-green-200 transition-colors">
+                <TrendingUp className="w-6 h-6 text-green-600" />
+              </div>
+              <span className="inline-block bg-gray-200 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">
+                Coming Soon
+              </span>
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Actual Results</h2>
+            <p className="text-gray-600 mb-6">
+              Official results from the Election Commission of India. View final seat counts and vote share distribution across all constituencies.
+            </p>
+            <div className="text-sm font-semibold text-green-600 group-hover:text-green-700 flex items-center gap-2">
+              View Results
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </Link>
         </div>
 
-        {/* Bottom ad */}
-        <AdBanner slot="3333333333" format="rectangle" />
-
-        {/* Key insights */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6">
-          <h2 className="text-base font-bold text-gray-800 mb-4">Key Takeaways</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-            <div className="flex gap-3">
-              <div className="w-1 rounded-full bg-red-500 flex-shrink-0" />
-              <div>
-                <div className="font-semibold text-gray-800">DMK+ leads in 5 of 6 polls</div>
-                <div className="text-xs text-gray-500 mt-0.5">
-                  DMK-led alliance projected at 127–152 seats across five agencies — above the 118 majority mark.
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <div className="w-1 rounded-full bg-yellow-400 flex-shrink-0" />
-              <div>
-                <div className="font-semibold text-gray-800">TVK (Vijay) — blockbuster debut</div>
-                <div className="text-xs text-gray-500 mt-0.5">
-                  Axis My India predicts TVK wins 109 seats, making Vijay the kingmaker or even CM. All others put TVK at 13–21.
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <div className="w-1 rounded-full bg-green-600 flex-shrink-0" />
-              <div>
-                <div className="font-semibold text-gray-800">AIADMK at historic low</div>
-                <div className="text-xs text-gray-500 mt-0.5">
-                  AIADMK+ projected 57–93 seats — a dramatic fall from 75 seats in 2021, squeezed by TVK.
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <div className="w-1 rounded-full bg-orange-500 flex-shrink-0" />
-              <div>
-                <div className="font-semibold text-gray-800">Record 85.10% voter turnout</div>
-                <div className="text-xs text-gray-500 mt-0.5">
-                  Highest turnout since Independence on April 23 — widely seen as anti-incumbency signal favouring change.
-                </div>
-              </div>
-            </div>
+        {/* Info section */}
+        <div className="mt-16 max-w-2xl mx-auto">
+          <div className="bg-amber-50 border border-amber-200 rounded-lg px-6 py-4">
+            <p className="text-sm text-amber-900">
+              <span className="font-semibold">Note:</span> The election was held on April 23, 2026, with official results on May 4, 2026. Exit polls are projections based on voter surveys and actual results may vary.
+            </p>
           </div>
         </div>
       </main>
