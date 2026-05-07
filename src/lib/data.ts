@@ -147,6 +147,17 @@ export const POLL_RESULTS: PollResult[] = [
     voteShare: { DMK: 45.0, INC: 0, VCK: 0, AIADMK: 20.0, BJP: 0, PMK: 0, TVK: 12.0, NTK: 0, OTH: 23.0 },
     sourceUrl: "https://www.newsx.com/elections/tamil-nadu-exit-poll-results-2026-sun-exit-poll-p-marq-live-mk-stalins-dmk-leads-big-vijays-tvk-makes-impact-party-wise-seat-prediction-full-breakdown-207367/",
   },
+  {
+    id: "eci-2026-05",
+    agency: "Election Commission of India",
+    channel: "Official Results",
+    publishedDate: "2026-05-04",
+    methodology: "Official Count",
+    // Final official results: DMK+ 51 | AIADMK+ 75 | TVK 108 | Others 0
+    seats: { DMK: 42, INC: 7, VCK: 2, AIADMK: 62, BJP: 8, PMK: 5, TVK: 108, NTK: 0, OTH: 0 },
+    voteShare: { DMK: 17.0, INC: 3.0, VCK: 2.0, AIADMK: 25.0, BJP: 4.0, PMK: 3.0, TVK: 46.0, NTK: 0, OTH: 0 },
+    sourceUrl: "https://elections.eci.gov.in/",
+  },
 ];
 
 export function getAllianceSeats(poll: PollResult, allianceName: string): number {
@@ -173,4 +184,4 @@ export function getAverageVoteShare(): Record<string, number> {
   return totals;
 }
 
-export const LAST_UPDATED = "2026-05-02T12:47:37.208Z";
+export const LAST_UPDATED = "2026-05-04T18:30:00+05:30";
