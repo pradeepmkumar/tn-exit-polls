@@ -1,14 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/:path(.*)",
       "destination": "https://screener-4eqe3tfeb9ujfytu2insfh.streamlit.app/:path",
-      "has": [
-        {
-          "type": "host",
-          "value": "screamer\.tn-poll\.in"
-        }
-      ]
+      "permanent": false
     }
   ]
 }
